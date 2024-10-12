@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyqani i Fotografive</title>
+    <link rel="stylesheet" href="shopcard.css">
+    <link rel="shortcut icon" href="assets/img/logo/logo nrm.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <h1>Dyqani i Fotografive</h1>
+    </header>
+
+    <main>
+        <section id="product-cards">
+            <div class="container">
+                <div class="row">
+                    <!-- Produktet -->
+                    <div class="col">
+                        <div class="card">
+                            <img src="assets/img/portrait/1.jpeg" alt="Fotografi 1">
+                            <h3>Fotografi</h3>
+                            <p>$5.00</p>
+                            <button class="add-to-cart">Shto në Kartë</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="assets/img/portrait/2.jpeg" alt="Fotografi 2">
+                            <h3>Fotografi</h3>
+                            <p>$10.00</p>
+                            <button class="add-to-cart">Shto në Kartë</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="assets/img/portrait/3.jpeg" alt="Fotografi 3">
+                            <h3>Fotografi</h3>
+                            <p>$20.00</p>
+                            <button class="add-to-cart">Shto në Kartë</button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="assets/img/portrait/4.jpeg" alt="Fotografi 3">
+                            <h3>Fotografi</h3>
+                            <p>$30.00</p>
+                            <button class="add-to-cart">Shto në Kartë</button>
+                        </div>
+                    </div>
+                    <!-- Shtoni më shumë produkte në përputhje me nevojat -->
+                </div>
+
+                <main>
+                    <section id="product-cards">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Produktet -->
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="assets/img/portrait/5.jpeg" alt="Fotografi 1">
+                                        <h3>Fotografi</h3>
+                                        <p>$40.00</p>
+                                        <button class="add-to-cart">Shto në Kartë</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="assets/img/portrait/6.jpeg" alt="Fotografi 2">
+                                        <h3>Fotografi</h3>
+                                        <p>$50.00</p>
+                                        <button class="add-to-cart">Shto në Kartë</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="assets/img/portrait/7.jpeg" alt="Fotografi 3">
+                                        <h3>Fotografi</h3>
+                                        <p>$60.00</p>
+                                        <button class="add-to-cart">Shto në Kartë</button>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="assets/img/portrait/8.jpeg" alt="Fotografi 3">
+                                        <h3>Fotografi</h3>
+                                        <p>$70.00</p>
+                                        <button class="add-to-cart">Shto në Kartë</button>
+                                    </div>
+                                </div>
+                                <!-- Shtoni më shumë produkte në përputhje me nevojat -->
+                            </div>
+                            <script>
+                                let cartItems = [];
+                            
+                                // Funksion për të shtuar produktet në kartë
+                                function addToCart(productName, productPrice) {
+                                    let product = {
+                                        name: productName,
+                                        price: productPrice
+                                    };
+                                    cartItems.push(product);
+                                    localStorage.setItem('cart', JSON.stringify(cartItems));
+                                    alert(`${productName} është shtuar në kartë!`);
+                                }
+                            
+                                // Funksion për të ngarkuar të dhënat e kartës në faqen e pagesës
+                                function loadCart() {
+                                    let storedCart = localStorage.getItem('cart');
+                                    if (storedCart) {
+                                        cartItems = JSON.parse(storedCart);
+                                        displayCartItems();
+                                    }
+                                }
+                            
+                                // Funksion për të shfaqur produktet në faqen e pagesës
+                                function displayCartItems() {
+                                    let cartContainer = document.getElementById('product-details');
+                                    let totalAmount = 0;
+                                    cartContainer.innerHTML = ''; // Pastrojmë përpara se të shtojmë produktet
+                            
+                                    cartItems.forEach(item => {
+                                        cartContainer.innerHTML += `<p>${item.name}: $${item.price.toFixed(2)}</p>`;
+                                        totalAmount += item.price;
+                                    });
+                            
+                                    document.getElementById('total-amount').textContent = `Total: $${totalAmount.toFixed(2)}`;
+                                }
+                            
+                                // Ngarkojmë produktet kur hapet faqja
+                                window.onload = loadCart;
+                            </script>
+                            
+                            <div id="cart">
+                                <!-- Itemet e karrocës do të shfaqen këtu -->
+                            </div>
+                            <h3 id="total">Totali: $0.00</h3>
+                            <a href="bynow.html">
+                                <button class="buy-now">Buy Now</button>
+                            </a>
+                            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dyqani i Fotografive</p>
+    </footer>
+
+    <script src="shopcaard.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="bynow.css">
+    <link rel="shortcut icon" href="assets/img/logo/logo nrm.jpg" type="image/x-icon">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shopcard.html">ShopStore</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1 class="page-title">Checkout</h1>
+    </header>
+
+    <main>
+        <section class="product-details-section">
+            <h2>Product Details</h2>
+            <div id="product-details" class="product-details">
+                <!-- Produktet nga karta do të shfaqen këtu -->
+            </div>
+            <div class="total-section">
+                <h3>Total</h3>
+                <p id="total-amount" class="total-amount"></p>
+            </div>
+        </section>
+
+        <section class="payment-section">
+            <h3>Payment Method</h3>
+            
+            <!-- Logot e metodave të pagesës -->
+            <div class="payment-options">
+                <img src="assets/LOGO/Visa-Logo-PNG-Image-File.png" alt="Visa" class="payment-logo">
+                <img src="assets/LOGO/Mastercard-Logo-PNG-HD.png" alt="MasterCard" class="payment-logo">
+                <img src="assets/LOGO/PayPal.png" alt="PayPal" class="payment-logo">
+                <img src="assets/LOGO/purepng.com-american-express-logologobrand-logoiconslogos-251519940821gg0bn.png" alt="American Express" class="payment-logo">
+            </div>
+            
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="payment-method">Select Payment Method:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="amex">American Express</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" required placeholder="1234 5678 9101 1121">
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM/YY">
+                </div>
+
+                <div class="form-group">
+                    <label for="cvc">CVC:</label>
+                    <input type="text" id="cvc" name="cvc" required placeholder="123">
+                </div>
+
+                <button type="submit" class="btn-submit">Pay Now</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dyqani i Fotografive</p>
+    </footer>
+
+  
+</body>
+</html>
